@@ -1,12 +1,20 @@
-import React from 'react';
-import logo from './logo.svg'
+import React, {useState} from 'react';
 import './App.css'
-import SignUpForm from "./components/Form"
+import FormikSignUpForm from "./components/Form"
+import {UsersCard} from "./components/UsersCard"
+
 
 function App() {
+  const [user, setUser] = useState([]);
+  
+  
   return (
+
     <div className="App">
-      <SignUpForm></SignUpForm>
+      <FormikSignUpForm setUser={setUser}></FormikSignUpForm>
+      <div>
+        <UsersCard user={user}></UsersCard>
+      </div>
     </div>
   );
 }
